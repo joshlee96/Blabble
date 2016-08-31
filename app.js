@@ -14,9 +14,11 @@ app.use(express.static(path.join(__dirname, 'bower_components'))); //send to cli
 
 //define routes
 app.use(require('./todos'));
+
 //start the server
-app.listen(1337, function () {
-	console.log('ready on port 1337');
+var port = process.env.PORT || 1337; //azure will set this port for you automatically
+app.listen(port, function () {
+	console.log('ready on port ' + port);
 }) 
 
 /*
