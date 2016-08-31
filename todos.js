@@ -34,7 +34,7 @@ router.post('/add', function(req, res){
     var newPost = {
         name: req.body.name,
         comment: req.body.comment
-    }
+    };
 
     mongo.connect(url, function (err, db) {
         assert.equal(null, err);
@@ -50,4 +50,5 @@ router.post('/add', function(req, res){
 router.post('/delete', function(req, res) {
 
 });
+
 module.exports = router;
