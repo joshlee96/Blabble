@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container">
-		<h1>Anonymous BlogPosts</h1>
+		<h1>Anonymous Blog Posts</h1>
 		<ul>
 			<% for(var i = 0; i < items.length; i++ ) { %>
 			<li><%= items[i].name + "-" + items[i].comment%> </li>
@@ -16,7 +16,7 @@
         <br />
 
 		<form action="/get-data" method="get">
-			<input typ="submit">
+			<input type="submit">
 		</form>
 
 		<form action="/add" method="post">
