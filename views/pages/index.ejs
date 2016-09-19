@@ -1,0 +1,56 @@
+<!doctype html>	
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Blabble</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/dist/css/styles.css"/>
+    <% include ../scripts/scripts.ejs %>
+</head>
+<body>
+    <div class="container">
+
+		<h1>Blabble</h1>
+			<% for(var i = 0; i < items.length; i++ ) { %>
+            <div class="card card-block">
+                <div class="card-title" id="post-title"><%= items[i].title%></div>
+				<div id="post-date">Posted on <%= computeDate()%></div>
+				<div class="card-text" id="post-post"><%= items[i].post %></div>
+				<div class="form">
+					<form action="/delete/<%= items[i]._id%>" method="post">
+						<button type="submit" class="btn btn-danger">x</button>
+					</form>
+				</div>
+				<% for(var j =0; j < items[j].comments.length; j ++) { %>
+						<div id="post-date">Posted on <%= computeDate()%></div>
+						<div class="card-text" id="post-comment"><%= items[j].comments[j] %></div>
+				<% } %>
+				<form action="/comment/<%= items[i]._id%>" method="post">
+					<div class="input">
+						<input type="text" name="comment" placeholder="Comment..">
+					</div>
+					<input type="submit">
+				</form>
+            </div>
+		 	<% } %>
+        <br />
+
+		<form action="/add" method="post">
+            <div class="input">
+                <input type="text" name="title" placeholder="Title">
+            </div>
+			<div class="input">
+				<input type="text" name="post" placeholder="Type away!">
+			</div>
+			<input type="submit">
+		</form>
+	</div>
+
+    <div class="footer">
+		<p>Joshua Lee &copy; 2016</p>
+        <a href="/about ">About</a>
+    </div>
+    <script src="jquery/dist/jquery.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

@@ -6,7 +6,7 @@ var app = express();
 //general steps:
 //configure app
 app.set('view engine', 'ejs'); //find ejs files
-app.set('views', path.join(__dirname, 'views')); //look inside view folder
+app.set('views', path.join(__dirname, 'views/pages')); //look inside view folder
 
 //use middleware: needed to parse bodies of requests to the server
 app.use(bodyParser());
