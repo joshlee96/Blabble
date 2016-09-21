@@ -21,9 +21,9 @@
 						<button type="submit" class="btn btn-danger">x</button>
 					</form>
 				</div>
-				<% for(var j =0; j < items[j].comments.length; j ++) { %>
+				<% for(var j =0; j < items[i].comments.length; j ++) { %>
 						<div id="post-date">Posted on <%= computeDate()%></div>
-						<div class="card-text" id="post-comment"><%= items[j].comments[j] %></div>
+						<div class="card-text" id="post-comment"><%= items[i].comments[j] %></div>
 				<% } %>
 				<form action="/comment/<%= items[i]._id%>" method="post">
 					<div class="input">

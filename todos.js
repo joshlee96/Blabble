@@ -38,7 +38,7 @@ router.post('/comment/:id', function(req, res) {
     console.log(newComment);
 
     mongo.connect(url, function(err,db) {
-        db.collection('blog-posts').update({"_id": objectId(id)}, {$set: {comments: newComment}});
+        db.collection('blog-posts').update({"_id": objectId(id)}, {$set: {comments: [newComment]}});
         db.close();
     });
     areNewPosts = true;
